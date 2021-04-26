@@ -1,0 +1,21 @@
+<div class="container">
+    <h4 class="title">Scores</h4>
+    <table>
+        <tr class="history-container">
+            <td class="">Name</td>
+            <td class="">Score</td>
+            <td class="">Date</td>
+            <td class="">Time</td>
+
+        </tr>
+        <tr *ngFor='let history of scoreHistoryDetails|async' class="history-container">
+            <td class="">{{history.playerName}}</td>
+            <td class="">{{history.score}}</td>
+            <td class="">{{history.date|date:'shortDate'}}</td>
+            <td class="">{{history.date|date:'shortTime'}}</td>
+
+
+
+        </tr>
+    </table>
+</div>

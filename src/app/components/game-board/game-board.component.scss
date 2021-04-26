@@ -1,0 +1,54 @@
+.details-container {
+    display: flex;
+
+    justify-content: space-between;
+    margin-left: 5px;
+}
+.game-container {
+    display: flex;
+    width: 300px;
+
+    justify-content: center;
+    margin-top: 15vh;
+    .bulb-container {
+        // width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .button-container {
+        // width: 300px;
+        display: flex;
+        justify-content: center;
+        Quit-Button {
+            background-color: red;
+        }
+    }
+    .message {
+        margin-top: 25px;
+        // width: 300px;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+    }
+    .currect {
+        color: rgb(52, 207, 13);
+    }
+    .wrong {
+        color: rgb(230, 24, 24);
+    }
+
+    .quit-button {
+        margin-top: 20px;
+        // width: 300px;
+        display: flex;
+        justify-content: center;
+        button {
+            background-color: red;
+        }
+    }
+}
+.father-game-container{
+    display: flex;
+
+    justify-content: center;
+}

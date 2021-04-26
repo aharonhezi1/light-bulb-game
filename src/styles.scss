@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+button {
+    width: 150px;
+    height: 30px;
+    background-color: blueviolet;
+    color: white;
+}
+.title {
+    margin-top: 0;
+    background-color: blueviolet;
+    color: white;
+    // padding-top:7px;
+    // padding-bottom: 7px;
+    padding: 7px 4px 7px 4px;
+}
+@media only screen and (max-width: 700px) {
+    html {
+        .game-container{
+            grid-template-columns: repeat(2, 1fr) !important;    
+             }
+             .bulb-container {
+                 width: 200px !important;
+             }
+  
+    }
+  }

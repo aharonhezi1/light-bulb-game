@@ -1,0 +1,16 @@
+.game-container{
+    display: grid;
+    grid-template-columns: 25vw auto auto auto  ;
+    grid-gap: 5px;
+    height: 100vh;
+background-color: rgb(128, 122, 122);
+   .board-container{
+    grid-column:2/ span 4;
+background-color: white;
+   } 
+   .score-container{
+
+    background-color: white;
+
+   }
+}

@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns:auto;
+    text-align: center;
+    margin-left: 5px;
+    padding-right:10px;
+
+    grid-gap: 5px;
+ 
+    // .history-container{
+    //     // display: flex;
+    //     // justify-content:space-evenly;
+    // }
+ 
+}
