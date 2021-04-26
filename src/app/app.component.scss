@@ -7,9 +7,15 @@ background-color: rgb(128, 122, 122);
    .board-container{
     grid-column:2/ span 4;
 background-color: white;
+background-image:url('../assets/cloudBg.jpg') ;
+background-repeat: no-repeat;
+background-size: cover;
+
    } 
    .score-container{
-
+    background-image:url('../assets/cloudBg.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: white;
 
    }
