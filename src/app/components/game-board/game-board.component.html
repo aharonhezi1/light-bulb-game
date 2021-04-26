@@ -7,7 +7,7 @@
 <div class="father-game-container">
 <div class='game-container'>
     <div class="">
-        <div class="button-container"> <button (click)="onGameStart()">Start Game</button>
+        <div class="button-container"> <button [disabled]='isSequenceOn|async' (click)="onGameStart()">Start Game</button>
         </div>
 
         <div class='bulb-container'>

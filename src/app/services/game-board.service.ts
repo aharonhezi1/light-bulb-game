@@ -15,6 +15,7 @@ export class GameBoardService {
   isGameStart: boolean
   playerName: string
   score = 0
+  isSequenceOn=new BehaviorSubject<boolean>(false)
   constructor(private bulbStateService: BulbStateService) { }
 
   chooseColor() {
@@ -22,6 +23,7 @@ export class GameBoardService {
   }
 
   onGameStart() {
+    this.isSequenceOn.next(true)
     this.isGameStart = true
     this.bulbStateService.deleteComputerSequence()
     this.bulbStateService.deletePlayerSequence()
@@ -29,8 +31,9 @@ export class GameBoardService {
   }
 
   playSequence() {
-    this.isPlayerTurn$.next(false)
 
+
+  this.isPlayerTurn$.next(false)
     this.bulbStateService.addComputerSequence(this.chooseColor())
     const computerSequence = this.bulbStateService.getComputerSequence()
     for (let i = 0; i <= computerSequence.length; i++) {
@@ -82,6 +85,8 @@ export class GameBoardService {
     }
     this.score = 0
     this.isGameStart=false
+    this.isSequenceOn.next(false)
+
   }
   onQuit() {
     this.gameOver()

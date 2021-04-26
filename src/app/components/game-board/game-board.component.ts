@@ -10,29 +10,32 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './game-board.component.html',
   styleUrls: ['./game-board.component.scss']
 })
-export class GameBoardComponent implements OnInit ,OnDestroy{
+export class GameBoardComponent implements OnInit, OnDestroy {
 
-subscription= new Subject()
+  subscription = new Subject()
   bulbsColor: string[];
 
-  get name(){
-return this.gameBoardService.playerName
+  get name() {
+    return this.gameBoardService.playerName
 
   }
-  get score(){
-return this.gameBoardService.score
+  get score() {
+    return this.gameBoardService.score
   }
-  get highestScore(){
-    if(this.bulbStateService.scoreHistory$.value){
-    return this.bulbStateService.scoreHistory$.value[0].score
-    }else{
+  get highestScore() {
+    if (this.bulbStateService.scoreHistory$.value) {
+      return this.bulbStateService.scoreHistory$.value[0].score
+    } else {
       return 0
     }
-      }
+  }
+get isSequenceOn(){
+  return this.gameBoardService.isSequenceOn
+}
 
 
   message: string
-  constructor(private gameBoardService: GameBoardService, private bulbStateService:BulbStateService) { }
+  constructor(private gameBoardService: GameBoardService, private bulbStateService: BulbStateService) { }
 
   onGameStart() {
     this.gameBoardService.onGameStart()
@@ -41,23 +44,23 @@ return this.gameBoardService.score
   ngOnInit(): void {
     this.bulbsColor = this.gameBoardService.bulbsColor
     this.gameBoardService.bulbCheckedColor$.pipe(takeUntil(this.subscription)).subscribe(color => {
-      if(color)
-      this.gameBoardService.onChooseBulb(color)
+      if (color)
+        this.gameBoardService.onChooseBulb(color)
 
     })
-   this.gameBoardService.gameMessage$.pipe(takeUntil(this.subscription)).subscribe(message => {
+    this.gameBoardService.gameMessage$.pipe(takeUntil(this.subscription)).subscribe(message => {
       this.message = message
-      setTimeout(()=>{
-        this.message=null
-      },1000)
+      setTimeout(() => {
+        this.message = null
+      }, 1000)
     })
   }
-  onQuit(){
+  onQuit() {
     this.gameBoardService.onQuit()
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.next()
-    this,this.subscription.complete
+    this, this.subscription.complete
   }
 
 

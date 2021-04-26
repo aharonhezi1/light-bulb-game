@@ -3,6 +3,10 @@ button {
     height: 30px;
     background-color: blueviolet;
     color: white;
+ 
+}
+button:disabled,button[disabled]{
+    background-color: rgb(206, 175, 235) !important;
 }
 .title {
     margin-top: 0;
