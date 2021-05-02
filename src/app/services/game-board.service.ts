@@ -58,6 +58,8 @@ export class GameBoardService {
           this.isPlayerTurn$.next(true)
         }
       })
+ 
+
     }
   }
 
@@ -85,7 +87,8 @@ export class GameBoardService {
     this.playSequenceV2()
     this.gameMessage$.next('WELL DONE!')
     this.score += 10;
-
+    // const history = JSON.parse(localStorage.getItem('history'))
+    // console.log(history);
   }
 
   gameOver() {
@@ -100,6 +103,8 @@ export class GameBoardService {
     this.score = 0
     this.isGameStart = false
     this.isSequenceOn.next(false)
+    localStorage.setItem('history', JSON.stringify(this.bulbStateService.scoreHistory$.value))
+
 
   }
   onQuit() {
