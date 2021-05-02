@@ -12,6 +12,7 @@
     margin-top: 15vh;
     .bulb-container {
         // width: 300px;
+        border-radius: 10px;
         display: flex;
         flex-wrap: wrap;
         background-color: white;
@@ -49,7 +50,7 @@
         }
     }
 }
-.father-game-container{
+.father-game-container {
     display: flex;
 
     justify-content: center;

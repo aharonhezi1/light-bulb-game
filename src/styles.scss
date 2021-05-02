@@ -3,9 +3,9 @@ button {
     height: 30px;
     background-color: blueviolet;
     color: white;
- 
 }
-button:disabled,button[disabled]{
+button:disabled,
+button[disabled] {
     background-color: rgb(206, 175, 235) !important;
 }
 .title {
@@ -16,14 +16,29 @@ button:disabled,button[disabled]{
     // padding-bottom: 7px;
     padding: 7px 4px 7px 4px;
 }
+
 @media only screen and (max-width: 700px) {
     html {
-        .game-container{
-            grid-template-columns: repeat(2, 1fr) !important;    
-             }
-             .bulb-container {
-                 width: 200px !important;
-             }
-  
+        .father-game-container {
+            // width: 300px;
+        }
+        .shrink-on-phone {
+            -webkit-transform: scale(0.7);
+            -moz-transform: scale(0.7);
+            -ms-transform: scale(0.7);
+            transform: scale(0.7);
+        }
+        .d-none-on-phone {
+            display: none !important;
+        }
+        .game-container {
+            grid-template-columns: repeat(2, 1fr) !important;
+            // grid-template-columns: 20vw 80vw   ;
+            // width: 210px;
+
+        }
+        .bulb-container {
+            width: 200px !important;
+        }
     }
-  }
+}

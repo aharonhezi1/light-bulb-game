@@ -5,14 +5,14 @@
             <td class="">Name</td>
             <td class="">Score</td>
             <td class="">Date</td>
-            <td class="">Time</td>
+            <td class="d-none-on-phone">Time</td>
 
         </tr>
         <tr *ngFor='let history of scoreHistoryDetails|async' class="history-container">
             <td class="">{{history.playerName}}</td>
             <td class="">{{history.score}}</td>
             <td class="">{{history.date|date:'shortDate'}}</td>
-            <td class="">{{history.date|date:'shortTime'}}</td>
+            <td class="d-none-on-phone">{{history.date|date:'shortTime'}}</td>
 
 
 

@@ -29,9 +29,9 @@ export class GameBoardComponent implements OnInit, OnDestroy {
       return 0
     }
   }
-get isSequenceOn(){
-  return this.gameBoardService.isSequenceOn
-}
+  get isSequenceOn() {
+    return this.gameBoardService.isSequenceOn
+  }
 
 
   message: string
