@@ -11,14 +11,12 @@
     justify-content: center;
     margin-top: 15vh;
     .bulb-container {
-        // width: 300px;
         border-radius: 10px;
         display: flex;
         flex-wrap: wrap;
         background-color: white;
     }
     .button-container {
-        // width: 300px;
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
@@ -28,7 +26,6 @@
     }
     .message {
         margin-top: 25px;
-        // width: 300px;
         display: flex;
         justify-content: center;
         font-size: 2rem;
@@ -42,7 +39,6 @@
 
     .quit-button {
         margin-top: 20px;
-        // width: 300px;
         display: flex;
         justify-content: center;
         button {
@@ -52,6 +48,5 @@
 }
 .father-game-container {
     display: flex;
-
     justify-content: center;
 }

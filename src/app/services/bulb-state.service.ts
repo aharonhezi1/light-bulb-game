@@ -12,7 +12,7 @@ export class BulbStateService {
   private computerSequence: string[] = []
   private playerSequence: string[] = []
 
-  private scoreHistory: ScoreHistory[] = JSON.parse(localStorage.getItem('history'))===null?[]:JSON.parse(localStorage.getItem('history'))
+  private scoreHistory: ScoreHistory[] = JSON.parse(localStorage.getItem('history')) === null ? [] : JSON.parse(localStorage.getItem('history'))
   scoreHistory$ = new BehaviorSubject<ScoreHistory[]>(JSON.parse(localStorage.getItem('history')))
   getComputerSequence(): string[] {
     return this.computerSequence.slice()
@@ -20,9 +20,6 @@ export class BulbStateService {
   getPlayerSequence(): string[] {
     return this.playerSequence.slice()
   }
-  // getScoreHistory(): ScoreHistory[] {
-  //   return this.scoreHistory.slice()
-  // }
 
   addComputerSequence(value) {
     this.computerSequence.push(value)
@@ -39,7 +36,6 @@ export class BulbStateService {
     }
     this.scoreHistory.splice(i, 0, value)
 
-    // this.scoreHistory.push(value)
     this.scoreHistory$.next(this.scoreHistory)
   }
 
@@ -53,9 +49,4 @@ export class BulbStateService {
     this.scoreHistory = []
     this.scoreHistory$.next([])
   }
-
-
-
-
-
 }

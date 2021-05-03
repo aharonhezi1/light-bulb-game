@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, of, timer } from 'rxjs';
-import { delay } from 'rxjs/operators';
 import { BulbStateService } from './bulb-state.service';
 
 @Injectable({
@@ -58,8 +57,6 @@ export class GameBoardService {
           this.isPlayerTurn$.next(true)
         }
       })
- 
-
     }
   }
 
@@ -70,7 +67,6 @@ export class GameBoardService {
   }
 
   onChooseBulb(themeColor) {
-
     this.bulbStateService.addPlayerSequence(themeColor)
     if (!this.isEquelSequence() && this.isGameStart) {
       return this.gameOver()
@@ -78,7 +74,6 @@ export class GameBoardService {
     if (this.bulbStateService.getPlayerSequence().length === this.bulbStateService.getComputerSequence().length) {
       return this.nextLevel()
     }
-
   }
 
   nextLevel() {
@@ -87,13 +82,11 @@ export class GameBoardService {
     this.playSequenceV2()
     this.gameMessage$.next('WELL DONE!')
     this.score += 10;
-    // const history = JSON.parse(localStorage.getItem('history'))
-    // console.log(history);
+
   }
 
   gameOver() {
     this.isPlayerTurn$.next(false)
-    // this.bulbCheckedColor$.next(null)
     this.bulbStateService.deleteComputerSequence()
     this.bulbStateService.deletePlayerSequence()
     this.gameMessage$.next('GAME OVER!')
@@ -111,7 +104,6 @@ export class GameBoardService {
     this.gameOver()
     this.playerName = null
     this.gameMessage$.next(null)
-
   }
 
 }

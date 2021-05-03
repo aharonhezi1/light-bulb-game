@@ -1,8 +1,7 @@
-import { AfterContentChecked, AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
-import { LightBulbComponent } from '../light-bulb/light-bulb.component';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BulbStateService } from '../../services/bulb-state.service'
 import { GameBoardService } from '../../services/game-board.service'
-import { from, Subject, Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -23,7 +22,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
     return this.gameBoardService.score
   }
   get highestScore() {
-    if (this.bulbStateService.scoreHistory$.value) {
+    if (this.bulbStateService.scoreHistory$.value?.length) {
       return this.bulbStateService.scoreHistory$.value[0].score
     } else {
       return 0

@@ -1,16 +1,19 @@
 <div class="details-container title">
-    <div class=""><span class="d-none-on-phone">Name: </span>{{name}}</div>
+    <div class="">
+        <span class="d-none-on-phone">Name: </span>{{name}}
+    </div>
     <div class="">{{"Score: "+score}}</div>
     <div class="d-none-on-phone">{{"Highest Score: "+highestScore}}</div>
-
 </div>
+
 <div class="father-game-container shrink-on-phone">
     <div class='game-container'>
         <div class="">
-            <div class="button-container"> <button [disabled]='isSequenceOn|async' (click)="onGameStart()">Start
-                    Game</button>
+            <div class="button-container">
+                <button [disabled]='isSequenceOn|async' (click)="onGameStart()">Start
+                    Game
+                </button>
             </div>
-
             <div class='bulb-container'>
                 <div *ngFor="let color of bulbsColor">
                     <app-light-bulb [themeColor]="color"></app-light-bulb>
@@ -19,8 +22,9 @@
             <div class="quit-button">
                 <button (click)='onQuit()'>Quit</button>
             </div>
-            <div *ngIf='message' class="message" [ngClass]="message!=='WELL DONE!'?'wrong':'currect'">{{message}}</div>
+            <div *ngIf='message' class="message" [ngClass]="message!=='WELL DONE!'?'wrong':'currect'">
+                {{message}}
+            </div>
         </div>
-
     </div>
 </div>

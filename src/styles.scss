@@ -19,9 +19,7 @@ button[disabled] {
 
 @media only screen and (max-width: 700px) {
     html {
-        .father-game-container {
-            // width: 300px;
-        }
+       
         .shrink-on-phone {
             -webkit-transform: scale(0.7);
             -moz-transform: scale(0.7);
@@ -33,9 +31,7 @@ button[disabled] {
         }
         .game-container {
             grid-template-columns: repeat(2, 1fr) !important;
-            // grid-template-columns: 20vw 80vw   ;
-            // width: 210px;
-
+         
         }
         .bulb-container {
             width: 200px !important;
