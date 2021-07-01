@@ -19,7 +19,7 @@
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 0px 10px white;
+    // box-shadow: 0 0 0px 10px white;
     background: rgba(var(--off-bulb-color));
     transition: all 0.5s ease-in-out;
   }
@@ -39,7 +39,7 @@
   }
 
 
-  input:checked {
+  .input-checked {
     background: rgba(var(--on-bulb-color));
     box-shadow: var(--shadowColor);
     -webkit-box-shadow: var(--shadowColor);

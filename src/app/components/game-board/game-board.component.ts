@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { BulbStateService } from '../../services/bulb-state.service'
 import { GameBoardService } from '../../services/game-board.service'
 import { Subject } from 'rxjs';
@@ -7,7 +7,9 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-game-board',
   templateUrl: './game-board.component.html',
-  styleUrls: ['./game-board.component.scss']
+  styleUrls: ['./game-board.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class GameBoardComponent implements OnInit, OnDestroy {
 
@@ -34,7 +36,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
 
 
   message: string
-  constructor(private gameBoardService: GameBoardService, private bulbStateService: BulbStateService) { }
+  constructor(private gameBoardService: GameBoardService, private bulbStateService: BulbStateService,public cd: ChangeDetectorRef) { }
 
   onGameStart() {
     this.gameBoardService.onGameStart()
@@ -51,6 +53,8 @@ export class GameBoardComponent implements OnInit, OnDestroy {
       this.message = message
       setTimeout(() => {
         this.message = null
+        this.cd.detectChanges()
+
       }, 1000)
     })
   }

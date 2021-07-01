@@ -1,9 +1,10 @@
-<div #bulb  class="bulb shrink">
-    <div  id="div"></div>
-    <input type="checkbox"
-    [(ngModel)]="isChecked"
-    (change)='onCheckBulb()'
-    [disabled]="!isPlayerTurn"
-    />
-   
-  </div>
+<div #bulb class="bulb shrink">
+  <div id="div"></div>
+  <input 
+  [ngClass]="{'input-checked':isChecked}" 
+  type="checkbox" 
+  [ngModel]="isChecked" 
+  (input)='onCheckBulb()'
+  [disabled]="!isPlayerTurn|async" />
+
+</div>

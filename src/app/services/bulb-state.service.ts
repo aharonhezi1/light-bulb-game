@@ -47,6 +47,6 @@ export class BulbStateService {
   }
   deleteScoreHistory() {
     this.scoreHistory = []
-    this.scoreHistory$.next([])
+    this.scoreHistory$.next(null)
   }
 }

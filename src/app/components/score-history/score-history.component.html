@@ -1,6 +1,6 @@
 <div class="container">
     <h4 class="title">Scores</h4>
-    <table>
+    <table *ngIf='(scoreHistoryDetails|async)'>
         <tr class="history-container">
             <td class="">Name</td>
             <td class="">Score</td>
@@ -18,5 +18,5 @@
 
         </tr>
     </table>
-    <button class="clear" (click)='onClear()'>clear</button>
+    <button  *ngIf='(scoreHistoryDetails|async)' class="clear" (click)='onClear()'>clear</button>
 </div>
